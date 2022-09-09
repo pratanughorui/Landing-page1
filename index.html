@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #001f22;
+        font-family: Montserrat, ui-sans-serif, system-ui, -apple-system,
+          BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans,
+          sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol,
+          Noto Color Emoji;
+      }
+      .header {
+        width: 100%;
+        height: 8vh;
+        position: fixed;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        transition: 0.5s ease;
+      }
+      .header h2 {
+        color: #fff;
+        margin-left: 3%;
+      }
+      .options {
+        display: flex;
+        justify-content: space-between;
+        width: 35%;
+        margin-right: 3%;
+        transition: 0.3s ease;
+      }
+      .options h3 {
+        color: #fff;
+        cursor: pointer;
+      }
+      .options h3:hover {
+        color: rgb(214, 178, 87);
+      }
+      .pic {
+        width: 100%;
+        height: 97vh;
+
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        object-fit: cover;
+        animation: change 25s infinite ease-out;
+      }
+
+      @keyframes change {
+        0% {
+          background-image: url(store/store1.jpg);
+        }
+        20% {
+          background-image: url(store/store2.jpg);
+        }
+        40% {
+          background-image: url(store/store3.jpg);
+        }
+        60% {
+          background-image: url(store/store4.jpg);
+        }
+        80% {
+          background-image: url(store/store5.jpg);
+        }
+        100% {
+          background-image: url(store/store6.jpg);
+        }
+      }
+      .hedpro h1 {
+        color: #fff;
+        font-size: 100px;
+        font-weight: 900;
+        margin: 2%;
+      }
+      .product {
+        width: 100%;
+      }
+      .pro {
+        margin: 2%;
+        margin-top: 5%;
+        height: 150vh;
+        display: flex;
+        gap: 100px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      .pro .p1 {
+        border: 1px solid #fff;
+        border-radius: 20px;
+        background-color: rgb(17, 16, 16);
+        width: 21%;
+        height: 20%;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+      .p1:hover {
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+      }
+      .p1 img {
+        width: 80%;
+        height: 80%;
+        border-radius: 20px;
+        margin: 2%;
+        margin-left: 9%;
+      }
+      .p1 h3 {
+        color: #fff;
+        text-align: center;
+      }
+      .footer {
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .contact {
+        text-align: center;
+      }
+      .contact img {
+        width: 2%;
+        height: 2%;
+      }
+      .contact h3 {
+        color: rgb(142, 139, 139);
+      }
+      .link {
+        margin-left: 2%;
+      }
+      .link h3 {
+        color: #3f83f880;
+        font-weight: 10;
+      }
+      .follow {
+        width: 7%;
+        height: 50%;
+        margin-right: 3%;
+        display: flex;
+      }
+      .follow i {
+        font-size: 25px;
+        color: #fff;
+      }
+      .follow a {
+        border: 1px solid #fff;
+        width: 33%;
+        padding: 5%;
+
+        margin-left: 15%;
+        border-radius: 20px;
+
+        cursor: pointer;
+      }
+
+      .follow .a1:hover {
+        /*box-shadow: 0 5px 30px rgb(180, 130, 227);*/
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+      }
+      .a1:hover {
+        border-color: #001f22;
+        box-shadow: 0 0 6px rgb(180, 130, 227);
+      }
+      .follow .fa-linkedin-in:hover {
+        color: palevioletred;
+      }
+      .follow .a2:hover {
+        /*box-shadow: 0 5px 30px rgb(180, 130, 227);*/
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+      }
+      .a2:hover {
+        color: rgb(121, 121, 238);
+        border-color: #001f22;
+        box-shadow: 0 0 6px rgb(180, 130, 227);
+      }
+      .follow .fa-github:hover {
+        color: rgb(121, 121, 238);
+      }
+      .mobile {
+        display: none;
+      }
+      .mobile i {
+        font-size: 30px;
+        color: #fff;
+        cursor: pointer;
+        background: transparent;
+      }
+
+      /*----------------------------------responsive-----------------------------------------*/
+      /*desktop*/
+      @media (min-width: 1024px) {
+      }
+      /*For tab*/
+      @media (min-width: 781px) and (max-width: 1023px) {
+        .hedpro h1 {
+          font-size: 90px;
+          font-weight: 890;
+          margin: 2%;
+        }
+        .follow {
+          width: 17%;
+          height: 50%;
+          margin-right: 3%;
+        }
+        .follow i {
+          font-size: 22px;
+        }
+        .follow a {
+          width: 24%;
+          padding: 2%;
+
+          margin-left: 15%;
+          border-radius: 20px;
+
+          cursor: pointer;
+        }
+      }
+      /*For mobile*/
+      @media (min-width: 563px) and (max-width: 780px) {
+        .mobile {
+          display: block;
+          margin-right: 4%;
+          z-index: 999;
+        }
+        .mobile .fa-bars {
+          display: block;
+        }
+        .mobile .fa-xmark {
+          display: none;
+        }
+        .options {
+          /*display: none;*/
+          width: 100%;
+          height: 200vh;
+          background-color: #001f22;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          transform: translateX(100%);
+          transition: all 0.5s linear;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          margin-top: 80%;
+        }
+        .options h3 {
+          margin-top: 8%;
+        }
+        .active .options {
+          transform: translateX(0);
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+        .active .mobile .fa-xmark {
+          display: block;
+        }
+        .active .mobile .fa-bars {
+          display: none;
+        }
+        .hedpro h1 {
+          font-size: 80px;
+          font-weight: 880;
+          margin: 2%;
+        }
+        .pro {
+          margin: 2%;
+          margin-top: 5%;
+          height: auto;
+          gap: 80px;
+        }
+        .follow {
+          width: 22%;
+          height: 50%;
+          margin-right: 3%;
+        }
+        .follow i {
+          font-size: 22px;
+        }
+        .follow a {
+          width: 30%;
+          padding: 3%;
+
+          margin-left: 15%;
+          border-radius: 20px;
+
+          cursor: pointer;
+        }
+        .contact h3 {
+          font-size: 17px;
+        }
+      }
+      @media (max-width: 562px) {
+        .mobile {
+          display: block;
+          margin-right: 4%;
+          z-index: 999;
+        }
+        .mobile .fa-bars {
+          display: block;
+        }
+        .mobile .fa-xmark {
+          display: none;
+        }
+        .options {
+          /*display: none;*/
+          width: 100%;
+          height: 200vh;
+          background-color: #001f22;
+          position: absolute;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          transform: translateX(100%);
+          transition: all 0.5s linear;
+          opacity: 0;
+          visibility: hidden;
+          pointer-events: none;
+          margin-top: 80%;
+        }
+        .options h3 {
+          margin-top: 8%;
+        }
+        .active .options {
+          transform: translateX(0);
+          opacity: 1;
+          visibility: visible;
+          pointer-events: auto;
+        }
+        .active .mobile .fa-xmark {
+          display: block;
+        }
+        .active .mobile .fa-bars {
+          display: none;
+        }
+        .hedpro h1 {
+          font-size: 50px;
+          font-weight: 850;
+          margin: 2%;
+        }
+        .follow {
+          width: 25%;
+          height: 50%;
+          margin-right: 2%;
+        }
+        .follow i {
+          font-size: 15px;
+        }
+        .follow a {
+          width: 40%;
+          padding: 2%;
+
+          margin-left: 5%;
+          border-radius: 20px;
+
+          cursor: pointer;
+        }
+        .pro {
+          margin: 2%;
+          margin-top: 5%;
+          height: auto;
+          gap: 80px;
+        }
+        .pro .p1 {
+          border: 1px solid #fff;
+          border-radius: 20px;
+          background-color: rgb(17, 16, 16);
+          width: 22%;
+          height: 20%;
+
+          cursor: pointer;
+          transition: 0.3s ease;
+        }
+        .link h3 {
+          font-size: 13px;
+          font-weight: 10;
+        }
+        .contact h3 {
+          font-size: 15px;
+        }
+        .contact img {
+          width: 3%;
+          height: 3%;
+        }
+        .contact h3 {
+          font-size: 11px;
+        }
+        .p1 h3 {
+          font-size: 15px;
+        }
+        .link h3 {
+          font-size: 11px;
+          font-weight: 9;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header" id="top">
+        <h2>D WATCH</h2>
+        <div class="options">
+          <h3>Home</h3>
+          <h3>Product</h3>
+          <h3>About</h3>
+          <h3>Contact</h3>
+          <h3>Review</h3>
+        </div>
+        <div class="mobile">
+          <i class="fa-solid fa-bars"></i>
+          <i class="fa-solid fa-xmark"></i>
+        </div>
+      </div>
+      <div class="pic"></div>
+
+      <div class="product">
+        <div class="hedpro">
+          <h1>Product</h1>
+        </div>
+        <div class="pro">
+          <div class="p1">
+            <img src="watch/w1.webp" alt="" />
+            <h3>Sonata</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w2.jpg" alt="" />
+            <h3>Titan</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w3.jpg" alt="" />
+            <h3>fastrack</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w4.webp" alt="" />
+            <h3>Timex</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w5.jpg" alt="" />
+            <h3>Rolax</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w6.jpg" alt="" />
+            <h3>Fossil</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w7.jpg" alt="" />
+            <h3>Tomy Hilfiger</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w8.jpg" alt="" />
+            <h3>Apple</h3>
+          </div>
+          <div class="p1">
+            <img src="watch/w9.jpg" alt="" />
+            <h3>Daniel Wellington</h3>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="link">
+          <h3>© 2022 D Watch. All Rights Reserved.</h3>
+        </div>
+        <div class="contact">
+          <h3>Made with <img src="heart.png" alt="" /> by Pratanu Ghorui</h3>
+        </div>
+        <div class="follow">
+          <a
+            class="a1"
+            href="https://www.linkedin.com/in/pratanu-ghorui-2766031b7/"
+            ><i class="fa-brands fa-linkedin-in"></i
+          ></a>
+          <a class="a2" href="https://github.com/pratanughorui"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </div>
+  </body>
+  <script
+    src="https://kit.fontawesome.com/4334081fd1.js"
+    crossorigin="anonymous"
+  ></script>
+  <script>
+    const change = document.getElementById("top");
+
+    window.onscroll = function () {
+      myFunction();
+    };
+
+    function myFunction() {
+      if (document.documentElement.scrollTop > 50) {
+        change.style.backgroundColor = "#001f22";
+      } else {
+        change.style.backgroundColor = "";
+      }
+    }
+    const a = document.querySelector(".mobile");
+    const b = document.querySelector(".header");
+    a.addEventListener("click", () => {
+      b.classList.toggle("active");
+    });
+  </script>
+</html>
